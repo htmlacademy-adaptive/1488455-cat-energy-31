@@ -1,0 +1,154 @@
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  padding-top: 42px;
+  margin-bottom: 40px;
+}
+
+.subscribe__title {
+  font-family: $secondary-font;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $base-color-text;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 32px;
+  width: fit-content;
+  position: relative;
+  background-color: $bg-basik;
+  box-shadow: -40px 0 0 0 $bg-basik, 40px 0 0 0 $bg-basik;
+}
+
+.subscribe__title::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100vw;
+  background-color: $bg-basik-accent;
+  top: 38%;
+  right: 0;
+  box-shadow: 100vw 0 0 0 $bg-basik-accent;
+  z-index: -1;
+}
+
+.subscribe__text {
+  font-family: $secondary-font;
+  font-size: 16px;
+  line-height: 24px;
+  color: $base-color-text;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 23px;
+  text-align: center;
+}
+
+.subscribe__form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.subscribe__field {
+  display: block;
+  font-family: $secondary-font;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  border: 1px solid #e7e7e7;
+  padding: 12px;
+  outline-offset: -2px;
+
+  &:hover {
+    border: 1px solid $bg-middle;
+  }
+
+  &:user-invalid {
+    outline: 2px solid #ff8282;
+  }
+
+  &:focus {
+    outline: 2px solid $base-color;
+  }
+}
+
+.subscribe__button {
+  display: block;
+  font-size: 20px;
+  line-height: 26px;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media (min-width: $tablet-width) {
+  .subscribe {
+    margin-bottom: 80px;
+    padding-top: 0;
+  }
+
+  .subscribe__form {
+    flex-direction: row;
+    width: 632px;
+    margin: 0 auto;
+  }
+
+  .subscribe__title {
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 66px;
+    padding-left: 40px;
+    box-shadow: 40px 0 0 0 $bg-basik;
+  }
+
+  .subscribe__title::before {
+    top: 47%;
+  }
+
+  .subscribe__text {
+    font-size: 24px;
+    line-height: 32px;
+    width: 632px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+
+  .subscribe__field {
+    display: block;
+    margin: 0;
+    min-width: 376px;
+  }
+
+  .subscribe__button {
+    width: 100%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .subscribe {
+    margin-bottom: 104px;
+  }
+
+  .subscribe__form {
+    width: 752px;
+  }
+
+  .subscribe__field {
+    min-width: 496px;
+  }
+
+  .subscribe__title {
+    padding: 0;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 72px;
+    box-shadow: -40px 0 0 0 $bg-basik, 40px 0 0 0 $bg-basik;
+  }
+
+  .subscribe__text {
+    width: 100%;
+  }
+}

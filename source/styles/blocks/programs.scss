@@ -1,0 +1,231 @@
+.programs {
+  margin-bottom: 20px;
+}
+
+.programs__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.programs__item {
+  background-color: $bg-superlight;
+  position: relative;
+}
+
+.programs__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.programs__item::before {
+  content: "";
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 21px;
+  left: 20px;
+}
+
+.programs__item--slim::before {
+  background-image: url("../../icons/programs-slim.svg");
+  width: 50px;
+  height: 53px;
+  background-size: 50px 53px;
+}
+
+.programs__item--weight::before {
+  background-image: url("../../icons/programs-weight.svg");
+  background-size: 67px 50px;
+  width: 67px;
+  height: 50px;
+  top: 25px;
+  left: 12px;
+}
+
+.programs__item-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px 18px;
+  position: relative;
+}
+
+.programs__title {
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 37px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $base-color-text;
+  margin: 0;
+  padding: 0;
+  padding-left: 70px;
+  margin-bottom: 29px;
+}
+
+.programs__text {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 38px;
+  position: relative;
+  color: $base-color;
+}
+
+.programs__link {
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $base-color-text;
+  position: relative;
+  font-family: $secondary-font;
+  padding: 4px 47px 4px 0;
+  align-self: flex-start;
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.programs__link::after {
+  content: "";
+  display: block;
+  background-image: url("../../icons/arrow-icon.svg");
+  background-size: 32px 12px;
+  width: 32px;
+  height: 10px;
+  background-position: -8px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 30px);
+  transform: translateY(-50%);
+  transition: background-position 0.3s;
+}
+
+.programs__link:hover::after {
+  background-position: 0;
+}
+
+
+@media (max-width: $mobile-width-only) {
+  .programs__text::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #d9d9d9;
+    position: absolute;
+    bottom: -23px;
+    left: 0;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .programs {
+    margin-bottom: 45px;
+  }
+
+  .programs__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .programs__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .programs__item::before {
+    content: "";
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 81px;
+    left: auto;
+    right: 63px;
+  }
+
+  .programs__item--slim::before {
+    width: 200px;
+    height: 211px;
+    background-size: 200px 211px;
+  }
+
+  .programs__item--weight::before {
+    width: 268px;
+    height: 200px;
+    background-size: 268px 200px;
+    top: 91px;
+    left: auto;
+    right: 29px;
+  }
+
+  .programs__item-wrapper {
+    padding: 77px 316px 53px 52px;
+  }
+
+  .programs__title {
+    font-size: 36px;
+    line-height: 36px;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  .programs__text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 48px;
+    color: $base-color-text;
+  }
+
+  .programs__link {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 4px 56px 4px 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .programs {
+    margin-bottom: 71px;
+  }
+
+  .programs__list {
+    display: grid;
+    grid-template-columns: repeat(2, 570px);
+    gap: 80px;
+  }
+
+  .programs__item:not(:last-child) {
+    margin: 0;
+  }
+
+  .programs__item--slim::before {
+    width: 100px;
+    height: 106px;
+    background-size: 100px 106px;
+    top: 41px;
+    left: 52px;
+  }
+
+  .programs__item--weight::before {
+    width: 134px;
+    height: 100px;
+    background-size: 134px 100px;
+    top: 47px;
+    left: 33px;
+  }
+
+  .programs__item-wrapper {
+    padding: 77px 61px 55px 52px;
+  }
+
+  .programs__title {
+    padding-left: 162px;
+    margin-bottom: 73px;
+  }
+
+  .programs__text {
+    margin-bottom: 23px;
+  }
+}

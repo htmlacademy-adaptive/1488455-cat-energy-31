@@ -1,0 +1,45 @@
+.data {
+  margin: 0;
+  padding: 0;
+}
+
+.data__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 12px;
+  line-height: 16px;
+  position: relative;
+}
+
+.data__value {
+  text-align: right;
+}
+
+@media (min-width: $tablet-width) {
+  .data {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .data__wrapper {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .data__wrapper::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #cdcdcd;
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .data__characteristic--taste {
+    padding: 2px 0;
+  }
+}

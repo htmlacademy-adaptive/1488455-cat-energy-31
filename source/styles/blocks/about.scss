@@ -1,0 +1,122 @@
+.about {
+  margin-bottom: 49px;
+}
+
+.about__title {
+  margin-bottom: 40px;
+}
+
+.about__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  gap: 20px;
+}
+
+.about__item {
+  display: grid;
+  grid-template-columns: 60px auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.about__item::before {
+  content: "";
+  background-color: $bg-basik-accent;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about__item--substances::before {
+  background-image: url("../../icons/about-icon-substances.svg");
+  background-size: 30px 32px;
+}
+
+.about__item--form::before {
+  background-image: url("../../icons/about-icon-form.svg");
+  background-size: 26px 28px;
+}
+
+.about__item--meal::before {
+  background-image: url("../../icons/about-icon-meal.svg");
+  background-size: 25px 30px;
+}
+
+.about__item--change::before {
+  background-image: url("../../icons/about-icon-change.svg");
+  background-size: 26px 31px;
+}
+
+.about__step {
+  margin: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .about {
+    margin-bottom: 55px;
+  }
+
+  .about__title {
+    margin-bottom: 32px;
+  }
+
+  .about__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 242px);
+    grid-template-rows: 280px;
+    counter-reset: section;
+    gap: 37px 142px;
+    margin-bottom: 47px;
+  }
+
+  .about__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 31px;
+    margin: 0;
+    padding-top: 40px;
+    margin-bottom: 47px;
+  }
+
+  .about__item::before {
+    width: 80px;
+    height: 80px;
+  }
+
+  .about__item::after {
+    counter-increment: section;
+    content: counter(section);
+    font-family: $secondary-font;
+    font-size: 280px;
+    line-height: 280px;
+    color: $bg-superlight;
+    position: absolute;
+    top: 0;
+    left: 115px;
+    z-index: -1;
+    margin-left: auto;
+  }
+
+  .about__step {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .about {
+    margin-bottom: 0;
+  }
+
+  .about__list {
+    padding: 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 37px 80px;
+  }
+}
